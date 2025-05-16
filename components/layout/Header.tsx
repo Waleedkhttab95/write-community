@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
         scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       )}
     >
@@ -120,7 +120,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-40 pt-16">
+        <div className="lg:hidden fixed inset-0 bg-white z-40 pt-16 w-full">
           <nav className="container-custom py-5">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (

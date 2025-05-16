@@ -1,15 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Tajawal } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
-
-const tajawal = Tajawal({ 
-  subsets: ['arabic'],
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-tajawal' 
-});
 
 export const metadata: Metadata = {
   title: 'مجتمع الكتابة | بيئتك الأمثل لتطوير قدراتك الكتابية',
@@ -37,11 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={tajawal.className}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <Toaster />
+      <body className="w-full overflow-x-hidden">
+        <div className="w-full overflow-x-hidden">
+          <Header />
+          <main className="min-h-screen w-full">{children}</main>
+          <Footer />
+          <Toaster />
+        </div>
       </body>
     </html>
   );

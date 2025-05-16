@@ -57,16 +57,33 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
   
   html {
     @apply scroll-smooth;
     direction: rtl;
-    font-family: 'Brando', 'Tajawal', sans-serif;
+    font-family: 'Brando', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
   
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Brando', sans-serif;
+  }
+
+  #__next {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,7 +109,7 @@
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
   
   .section-padding {
