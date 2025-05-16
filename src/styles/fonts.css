@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Brando';
+    src: url('/alfont_com_Brando-Arabic-Text.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* You can use this font in your components like this:
+.your-element {
+    font-family: 'Brando', sans-serif;
+}
+*/ 
