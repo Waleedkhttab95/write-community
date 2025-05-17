@@ -80,10 +80,10 @@ export default function ContactSection() {
                     <h4 className="font-bold text-gray-700 mb-1">التواصل الاجتماعي</h4>
                     <p className="text-gray-600">
                       <a href="https://twitter.com/WritingKSA" target="_blank" rel="noopener noreferrer" className="hover:text-gold block">
-                        تويتر: @WritingKSA
+                        اكس: WritingKSA
                       </a>
                       <a href="https://www.instagram.com/Writing_community22" target="_blank" rel="noopener noreferrer" className="hover:text-gold block">
-                        انستغرام: @Writing_community22
+                        انستغرام: Writing_community22
                       </a>
                     </p>
                   </div>

@@ -40,11 +40,11 @@ export default function HeroSection() {
             }`}
           >
             <Image
-              src="/logo.svg"
+              src="/White.svg"
               alt="مجتمع الكتابة"
-              width={36}
-              height={36}
-              className="ml-3 w-auto h-9"
+              width={50}
+              height={50}
+              className="ml-3 w-auto h-12"
               priority
             />
             {/* <span className="text-gold-light text-lg">مجتمع الكتابة</span> */}
@@ -55,7 +55,7 @@ export default function HeroSection() {
               isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
             }`}
           >
-            <span className="block">بيئتك الأمثل</span> 
+            <span className="block mb-4">بيئتك الأمثل</span> 
             <span className="text-gold">لتطوير قدراتك الكتابية</span>
           </h1>
           

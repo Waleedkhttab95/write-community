@@ -90,11 +90,19 @@ export default function Header() {
               </a>
             ))}
             <Button 
-              className="bg-gold hover:bg-gold-dark text-white px-6 mr-3" 
+              className="bg-gold hover:bg-gold-dark text-white px-6 mr-6" 
               onClick={() => window.open('#contact', '_self')}
             >
               انضم إلينا
             </Button>
+
+            <Button 
+              className="bg-gold hover:bg-gold-dark text-white px-6 mr-3" 
+              onClick={() => window.open('https://store-write-community.com', '_blank')}
+            >
+              المتجر
+            </Button>
+
           </nav>
 
           {/* Mobile Menu Button */}

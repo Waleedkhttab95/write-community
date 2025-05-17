@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { BookOpen, BookText, PenTool, MessageSquare, GraduationCap, BookMarked, Plus } from 'lucide-react';
+import { Sparkles, PenTool, GraduationCap, Compass, Plus } from 'lucide-react';
 
 interface ServiceProps {
   icon: React.ReactNode;
@@ -18,11 +18,13 @@ function Service({ icon, title, description }: ServiceProps) {
       <h3 className="text-xl font-bold mb-3 text-gray-800">{title}</h3>
       <p className="text-gray-600">{description}</p>
       <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-md">
-        <div className="flex items-center gap-2">
-          <p className="text-1xl font-bold text-gold mb-1">انضم إلينا</p>
-          <Plus className="text-gold w-5 h-5" />
-        </div>
-        {/* <p className="text-gray-600 text-sm">مستفيد من برامجنا</p> */}
+        <a href="https://store-write-community.com" target="_blank" rel="noopener noreferrer" className="block">
+          <div className="flex items-center gap-2">
+            <p className="text-1xl font-bold text-gold mb-1">انضم إلينا</p>
+            <Plus className="text-gold w-5 h-5" />
+          </div>
+          {/* <p className="text-gray-600 text-sm">مستفيد من برامجنا</p> */}
+        </a>
       </div>
     </div>
   );
@@ -57,13 +59,13 @@ export default function ServicesSection() {
         <div className="text-center mb-16">
           <h2 className="decorated-heading animated-element opacity-0">خدماتنا</h2>
           <p className="animated-element opacity-0 max-w-3xl mx-auto text-lg text-gray-600">
-            نقدم مجموعة متنوعة من الخدمات المصممة لمساعدة الكتاب على تطوير مهاراتهم والوصول إلى أهدافهم
+            نقدم مجموعة متنوعة من الخدمات المصممة للأفراد والجهات لمساعدة الكتاب على تطوير مهاراتهم والوصول إلى أهدافهم
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Service 
-            icon={<BookOpen className="text-orange h-8 w-8" />}
+            icon={<Sparkles className="text-orange h-8 w-8" />}
             title="تحفيز"
             description="نوقظ في الكتّاب شغف البداية، ونكسر حاجز الرهبة من الورقة البيضاء. من خلال المجالس والمحاضرات، نخلق بيئة تشجع على الانطلاق وتمنح الثقة. الكتابة ليست رفاهية، بل ممارسة يومية تبدأ من التحفيز وتكبر بالاستمرارية."
           />
@@ -75,13 +77,13 @@ export default function ServicesSection() {
           />
           
           <Service 
-            icon={<MessageSquare className="text-orange h-8 w-8" />}
+            icon={<GraduationCap className="text-orange h-8 w-8" />}
             title="تدريب"
             description="نقدّم ورشًا تخصصية ترتكز على المهارة، وتُمارس فيها الكتابة كما تُمارَس الحرفة. نتعامل مع المحتوى بجدّية، ومع الكتّاب كصنّاع أثر لا طلاب عابرين. التدريب لدينا ليس تلقينًا، بل تجربة تتشكل فيها الكفاءة باليد والعين معًا."
           />
           
           <Service 
-            icon={<BookText className="text-orange h-8 w-8" />}
+            icon={<Compass className="text-orange h-8 w-8" />}
             title="توجيه"
             description="نرافق الكتّاب في رحلات تأليفهم، ونقدّم الدعم في لحظات التعثر والتفكير. خبراؤنا لا يمسكون القلم عنك، لكنهم يضيئون لك الطريق إلى وضوح النص. نحن هنا لنعينك على تحويل الفكرة إلى مخطوطة، والمخطوطة إلى أثر يستحق."
           />
@@ -105,7 +107,7 @@ export default function ServicesSection() {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800">هل تحتاج إلى خدمة مخصصة؟</h3>
               <p className="text-gray-600 mb-6">
-                نحن نقدم خدمات مخصصة تناسب احتياجاتك الفردية. تواصل معنا لمناقشة كيف يمكننا مساعدتك في رحلتك الكتابية.
+                نحن نقدم خدمات مخصصة تناسب تناسب احتياجات الأفراد والجهات . تواصل معنا لمناقشة كيف يمكننا مساعدتك في رحلتك الكتابية.
               </p>
               <a 
                 href="#contact" 

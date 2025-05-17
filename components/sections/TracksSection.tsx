@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Pencil, UserRound, Users } from 'lucide-react';
+import { BookOpen, GraduationCap, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface TrackProps {
@@ -60,14 +60,14 @@ export default function TracksSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Track 
-            icon={<Pencil className="text-gold h-10 w-10" />}
+            icon={<BookOpen className="text-gold h-10 w-10" />}
             title="مجلس الكتابة"
             description="مساحة هادئة وملهمة تُعقد فيها لقاءات دورية تتيح للكتّاب التفرغ التام للكتابة، بعيدًا عن ضجيج الانشغالات. هنا تُصقل النصوص، وتولد الأفكار، وتُنجز المشاريع في حضرة التركيز والجمال."
             index={1}
           />
           
           <Track 
-            icon={<UserRound className="text-gold h-10 w-10" />}
+            icon={<GraduationCap className="text-gold h-10 w-10" />}
             title="معمل الكتابة"
             description="ورشة إبداع متواصلة تجمع بين التدريب العملي والتأهيل المنهجي، لإكساب الكتّاب أدوات الكتابة في مختلف المجالات. هنا تُبنى المهارات، وتُختبر التجارب، وتُعاد صياغة القدرة على التعبير."
             index={2}

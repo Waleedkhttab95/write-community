@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { BookOpen, BookText, UsersRound } from 'lucide-react';
+import { Target, BookText, Sparkles } from 'lucide-react';
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,7 +27,9 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <h2 className="decorated-heading animated-element">من نحن</h2>
           <p className="animated-element max-w-3xl mx-auto text-lg text-gray-600">
-          مجتمع الكتابة، جهة متخصصة في تقديم برامج بناء القدرات وتأهيل الكفاءات في الكتابة بمختلف المجالات، معتمدين على أهم منهجيات التدريب والتصميم التعليمي، ومنطلقين من خبرة معمقة في فهم الكتابة وأدواتها. 
+           جهة متخصصة في تقديم برامج بناء القدرات وتأهيل الكفاءات في الكتابة بمختلف المجالات،
+           معتمدين على أهم منهجيات التدريب والتصميم التعليمي،
+           ومنطلقين من خبرة معمقة في فهم الكتابة وأدواتها. 
 
           </p>
         </div>
@@ -36,11 +38,11 @@ export default function AboutSection() {
           {/* Vision */}
           <div className="card animated-element p-8 bg-white border-t-4 border-gold text-center">
             <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <BookOpen className="text-gold h-8 w-8" />
+              <Target className="text-gold h-8 w-8" />
             </div>
             <h3 className="text-xl font-bold mb-4 text-gray-800">رؤيتنا</h3>
             <p className="text-gray-600">
-            الوجهة الأولى في برامج الكتابة و تصميم تجارب تعليمية مبتكرة لبناء القدرات الكتابية. 
+            الوجهة الأولى في برامج الكتابة و تصميم التجارب التعليمية المبتكرة لبناء القدرات الكتابية. 
             </p>
           </div>
 
@@ -51,18 +53,18 @@ export default function AboutSection() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-gray-800">قصتنا</h3>
             <p className="text-gray-600 text-right">
-              انطلق مجتمع الكتابة في 1/1/1444هـ من مدينة الريــــاض في المملكــة العـربيــة السعــوديــة، من خلال عدة مسارات متكاملة تلبي احتياجات الكتّاب في مختلف المجالات للمساهمة في بناء القدرات وتطوير المنتجات الكتابية في المملكة العربية السعودية.
+              انطلق مجتمع الكتابة في 1/1/1444هـ من مدينة الريــــاض في المملكــة العـربيــة السعــوديــة، من خلال عدة مسارات متكاملة تلبي احتياجات الكتّاب في مختلف المجالات للمساهمة في بناء القدرات وتطوير المنتجات الكتابية وتطوير المنتجات الكتابية باللغة العربية .
             </p>
           </div>
 
           {/* Values */}
           <div className="card animated-element p-8 bg-white border-t-4 border-orange text-center">
             <div className="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <UsersRound className="text-orange h-8 w-8" />
+              <Sparkles className="text-orange h-8 w-8" />
             </div>
             <h3 className="text-xl font-bold mb-4 text-gray-800">قيمنا</h3>
             <p className="text-gray-600">
-              الابتكار: سؤالــنا الأول وغايتنا الأولى، وبـه نتـجـدد ونكـتـشف.<br />
+            الابتكار: سؤالــنا الأول وغايتنا الأولى.<br />
               الإتقان: منهجنا الثابت وعهدنا الدائم.<br />
               التعاون: حالتــــنا الذهنــية المستـمرة وذروة مرونتنا.
             </p>
@@ -72,8 +74,10 @@ export default function AboutSection() {
         {/* Additional Details */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">منهجيتنا</h3>
-            <div className="w-24 h-1 bg-gold mx-auto"></div>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">منهجياتنا</h3>
+            <span className="text-gray-600 text-lg max-w-3xl mx-auto block">
+              انطلاقًا من منهجية التصميم المرتكز حول الإنسان، ومنهجية التفكير التصميمي، ومناهج التدريب العالمية، وضعنا عددًا من المنهجيات الخاصة التي نصمم برامجنا وفقًا لها
+            </span>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

@@ -3,6 +3,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import TracksSection from '@/components/sections/TracksSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ProgramsSection from '@/components/sections/ProgramsSection';
+import GallerySection from '@/components/sections/GallerySection';
 import ArticlesSection from '@/components/sections/ArticlesSection';
 import PartnersSection from '@/components/sections/PartnersSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -15,6 +16,7 @@ export default function Home() {
       <TracksSection />
       <ServicesSection />
       <ProgramsSection />
+      <GallerySection />
       <ArticlesSection />
       <PartnersSection />
       <ContactSection />

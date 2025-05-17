@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Twitter, Instagram, Send, ArrowRight } from 'lucide-react';
+import { Instagram, Send, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import NewsletterForm from '@/components/forms/NewsletterForm';
@@ -20,12 +20,20 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 space-x-reverse mt-6">
               <a 
-                href="https://twitter.com/WritingKSA" 
+                href="https://x.com/WritingKSA" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
               >
-                <Twitter size={20} className="text-gold-light" />
+                <svg
+                  viewBox="0 0 24 24"
+                  width={20}
+                  height={20}
+                  className="text-gold-light"
+                  fill="currentColor"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
               <a 
                 href="https://www.instagram.com/Writing_community22" 
@@ -95,11 +103,11 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-gray-300 mb-2">
-              تويتر:
+              اكس:
             </p>
             <p className="text-gold-light mb-4 hover:underline">
-              <a href="https://twitter.com/WritingKSA" target="_blank" rel="noopener noreferrer">
-                @WritingKSA
+              <a href="https://x.com/WritingKSA" target="_blank" rel="noopener noreferrer">
+                WritingKSA
               </a>
             </p>
           </div>
