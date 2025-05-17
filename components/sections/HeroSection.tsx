@@ -44,7 +44,7 @@ export default function HeroSection() {
               alt="مجتمع الكتابة"
               width={50}
               height={50}
-              className="ml-3 w-auto h-12"
+              className="ml-3 w-auto h-[50px]"
               priority
             />
             {/* <span className="text-gold-light text-lg">مجتمع الكتابة</span> */}
