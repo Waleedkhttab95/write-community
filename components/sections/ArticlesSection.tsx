@@ -189,7 +189,7 @@ export default function ArticlesSection() {
             author="رائد العيد"
             date="2025-05-16"
             category="مقالات تعليمية"
-            image="/DSC06994.JPG"
+            image="/images/gallery/الكتابة على الكتابة.jpg"
             slug="pay-attention"
           />
         </div>

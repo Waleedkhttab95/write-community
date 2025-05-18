@@ -6,21 +6,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images: string[] = [
   '/images/gallery/مجالس الكتابة.JPG',
-  '/images/gallery/قصائد الأطفال.jpeg',
   '/images/gallery/الكتابة على الكتابة.jpg',
-  '/images/gallery/ابجديات الكتابة.jpeg',
   '/images/gallery/DSC09032.JPG',
-  '/images/gallery/DSC09016.JPG',
   '/images/gallery/DSC08995.JPG',
-  '/images/gallery/DSC07146.JPG',
   '/images/gallery/DSC07042.JPG',
-  '/images/gallery/DSC07033.JPG',
   '/images/gallery/DSC07020.JPG',
-  '/images/gallery/DSC06993.JPG',
   '/images/gallery/CSP09908.jpg',
-  '/images/gallery/CSP00349.jpg',
-  '/images/gallery/CSP00275.jpg',
-  '/images/gallery/CSP00156.jpg'
+  '/images/gallery/CSP00275.jpg'
 ];
 
 export default function GallerySection() {
