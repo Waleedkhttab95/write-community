@@ -150,6 +150,16 @@ export default function Header() {
               >
                 انضم إلينا
               </Button>
+
+              <Button 
+                className="bg-gold hover:bg-gold-dark text-white mt-2 w-full" 
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.open('https://store-write-community.com', '_blank');
+                }}
+              >
+                المتجر
+              </Button>
             </div>
           </nav>
         </div>
