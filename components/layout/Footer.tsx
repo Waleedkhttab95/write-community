@@ -103,7 +103,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-gray-300 mb-2">
-              اكس:
+                X:
             </p>
             <p className="text-gold-light mb-4 hover:underline">
               <a href="https://x.com/WritingKSA" target="_blank" rel="noopener noreferrer">

@@ -2,6 +2,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import TracksSection from '@/components/sections/TracksSection';
 import ServicesSection from '@/components/sections/ServicesSection';
+import ServicesTabsSection from '@/components/sections/ServicesTabsSection';
 import ProgramsSection from '@/components/sections/ProgramsSection';
 import GallerySection from '@/components/sections/GallerySection';
 import ArticlesSection from '@/components/sections/ArticlesSection';
@@ -15,6 +16,7 @@ export default function Home() {
       <AboutSection />
       <TracksSection />
       <ServicesSection />
+      <ServicesTabsSection />
       <ProgramsSection />
       <GallerySection />
       <ArticlesSection />
