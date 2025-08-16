@@ -16,16 +16,15 @@ function Service({ icon, title, description }: ServiceProps) {
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3 text-gray-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-      <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-md">
-        <a href="https://store-write-community.com" target="_blank" rel="noopener noreferrer" className="block">
-          <div className="flex items-center gap-2">
+      <p className="text-gray-600" dir="rtl">{description}</p>
+      {/* <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-md"> */}
+          {/* <div className="flex items-center gap-2">
             <p className="text-1xl font-bold text-gold mb-1">انضم إلينا</p>
             <Plus className="text-gold w-5 h-5" />
-          </div>
+          </div> */}
           {/* <p className="text-gray-600 text-sm">مستفيد من برامجنا</p> */}
-        </a>
-      </div>
+     
+      {/* </div> */}
     </div>
   );
 }
@@ -102,31 +101,7 @@ export default function ServicesSection() {
         </div>
         
         {/* Call to action */}
-        <div className="mt-16 p-8 bg-white rounded-lg shadow-md animated-element opacity-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">هل تحتاج إلى خدمة مخصصة؟</h3>
-              <p className="text-gray-600 mb-6">
-                نحن نقدم خدمات مخصصة تناسب تناسب احتياجات الأفراد والجهات . تواصل معنا لمناقشة كيف يمكننا مساعدتك في رحلتك الكتابية.
-              </p>
-              <a 
-                href="#contact" 
-                className="btn-primary inline-block"
-              >
-                تواصل معنا
-              </a>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="مساعدة الكتاب" 
-                className="w-full h-64 object-cover rounded-lg"
-              />
-              <div className="absolute inset-0 bg-orange/10 rounded-lg"></div>
-            </div>
-          </div>
-        </div>
+   
       </div>
     </section>
   );

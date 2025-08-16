@@ -42,7 +42,7 @@ function ServiceCard({ icon, title, description, features, buttonText }: Service
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
         <div className="flex-1 mb-6">
-          <p className="text-gray-600 leading-relaxed text-justify">
+          <p className="text-gray-600 leading-relaxed text-justify" dir="rtl">
             {fullDescription}
           </p>
         </div>
@@ -243,6 +243,32 @@ export default function ServicesTabsSection() {
             </Button>
           </div>
         </div> */}
+
+<div className="mt-16 p-8 bg-white rounded-lg shadow-md animated-element opacity-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">هل تحتاج إلى خدمة مخصصة؟</h3>
+              <p className="text-gray-600 mb-6">
+                نحن نقدم خدمات مخصصة تناسب تناسب احتياجات الأفراد والجهات . تواصل معنا لمناقشة كيف يمكننا مساعدتك في رحلتك الكتابية.
+              </p>
+              <a 
+                href="#contact" 
+                className="btn-primary inline-block"
+              >
+                تواصل معنا
+              </a>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="مساعدة الكتاب" 
+                className="w-full h-64 object-cover rounded-lg"
+              />
+              <div className="absolute inset-0 bg-orange/10 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
