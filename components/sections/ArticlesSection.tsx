@@ -271,6 +271,21 @@ export default function ArticlesSection() {
             image='https://i.pinimg.com/736x/0c/cc/c3/0cccc35c379f34a166fcad892b42aac8.jpg'
             slug="when-you-write-the-survival-about-writing-under-the-ashes"
           />
+
+<Article
+            title="الركاكة وإضمار العربية"
+            excerpt={`
+   
+              "اللغة" في حقيقتها "رأسمال جماعي"، حيث يستيقظ وعيُ الإنسان على لغة يرثها ممن سبقوه، فلا أحد إذن يسعه أن يتصرف فيما لا يملكه ملكية خاصة، ولا أن يبدل فيه من تلقاء نفسه. واللغة حينما تكون رأسمال جماعياً، فهي ليست من قبيل "شركات الأموال" وإنما هي "شركة تضامن"، تقوم على أفراد يتعارفون فيما بينهم (=مجتمع معين)، ويتشاركون في قالب تضامني حيال الأرباح والخسائر، فربحهم اللغوي للجميع، وخسارتهم اللغوية يتحملها الكافة، على أن نتفطن إلى حقيقة أن هذه الأرباح أو الخسائر ليست لغوية صرفة، وإنما هي حضارية، إذ لا تقوم حضارة ولا تتقوى إلا على لغة متينة مستقرة؛ تضمن تراكم: التراث والفكر والإبداع، في نهج تواصلي تعاضدي.
+
+
+              `}
+            author=" د. عبدالله البريدي "
+            date="2025-10-13"
+            category="مقالات ثقافية"
+            image='https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+            slug="weakness-and-impairment-of-arabic"
+          />
         </div>
         
         {/* <div className="mt-12 text-center animated-element opacity-0">
