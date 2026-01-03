@@ -558,7 +558,7 @@ const articles = {
     author: 'رائد العيد',
     date: '2026-01-01',
     category: 'مقالات لغوية',
-    image: 'https://i.ibb.co/FqJYtCS6/IMG-7627.avif'
+    image: 'https://i.ibb.co/yMx2SCM/DSC00076.jpg'
   },
   'exhibition-writing': {
     title: '"كتابة المعرض الفني".. بين النص والفن',
