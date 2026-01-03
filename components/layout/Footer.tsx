@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Instagram, Send, ArrowRight } from 'lucide-react';
+import { Instagram, Send, ArrowRight, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import NewsletterForm from '@/components/forms/NewsletterForm';
@@ -50,6 +50,14 @@ export default function Footer() {
                 className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
               >
                 <Send size={20} className="text-gold-light" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/writingcommunity/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
+              >
+                <Linkedin size={20} className="text-gold-light" />
               </a>
             </div>
           </div>
