@@ -1,6 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
 import { getArticles } from '@/lib/cms';
+import { Button } from '@/components/ui/button';
 import ArticlesGrid, { type ArticleCardData } from './ArticlesGrid';
+
+// Number of articles to preview on the homepage. The rest live on /articles.
+const PREVIEW_COUNT = 3;
 
 // Server component: fetches published articles from the CMS at build time and
 // hands them to the client grid (which renders the cards + scroll animation).
@@ -17,6 +23,8 @@ export default async function ArticlesSection() {
     image: a.image,
   }));
 
+  const preview = cards.slice(0, PREVIEW_COUNT);
+
   return (
     <section id="articles" className="section-padding bg-muted/30">
       <div className="container-custom">
@@ -27,7 +35,18 @@ export default async function ArticlesSection() {
           </p>
         </div>
 
-        <ArticlesGrid articles={cards} />
+        <ArticlesGrid articles={preview} />
+
+        {cards.length > PREVIEW_COUNT && (
+          <div className="mt-12 text-center">
+            <Link href="/articles">
+              <Button size="lg" className="inline-flex items-center">
+                عرض جميع المقالات
+                <ChevronLeft className="mr-1" size={20} />
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
