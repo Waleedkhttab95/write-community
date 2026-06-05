@@ -18,11 +18,11 @@ export default async function ArticlesSection() {
   }));
 
   return (
-    <section id="articles" className="section-padding bg-gray-50">
+    <section id="articles" className="section-padding bg-muted/30">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="mb-16 max-w-3xl">
           <h2 className="decorated-heading animated-element opacity-0">المقالات والمنشورات</h2>
-          <p className="animated-element opacity-0 max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="animated-element opacity-0 max-w-3xl text-lg text-muted-foreground">
             اطلع على أحدث المقالات والمنشورات من مجتمع الكتابة والمساهمين فيه
           </p>
         </div>

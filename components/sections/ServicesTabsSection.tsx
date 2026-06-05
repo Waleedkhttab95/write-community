@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -34,21 +34,21 @@ function ServiceCard({ icon, title, description, features, buttonText }: Service
 
   return (
     <Card className="service-card h-full flex flex-col">
-      <CardHeader className="text-center">
-        <div className="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+      <CardHeader>
+        <div className="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mb-4">
           {icon}
         </div>
-        <CardTitle className="text-xl font-bold text-gray-800 mb-4">{title}</CardTitle>
+        <CardTitle className="text-xl font-bold text-foreground mb-4">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
         <div className="flex-1 mb-6">
-          <p className="text-gray-600 leading-relaxed text-justify" dir="rtl">
+          <p className="text-muted-foreground leading-relaxed text-justify" dir="rtl">
             {fullDescription}
           </p>
         </div>
         <Button 
           onClick={handleRequestService}
-          className="w-full bg-orange hover:bg-orange/90 text-white"
+          className="w-full bg-orange-dark hover:bg-orange-dark/90 text-white"
         >
           {buttonText}
         </Button>
@@ -58,25 +58,6 @@ function ServiceCard({ icon, title, description, features, buttonText }: Service
 }
 
 export default function ServicesTabsSection() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in-up');
-          entry.target.classList.remove('opacity-0');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    const elements = document.querySelectorAll('.animated-element');
-    elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   const individualServices = [
     {
       icon: <PenTool className="text-orange h-8 w-8" />,
@@ -132,32 +113,28 @@ export default function ServicesTabsSection() {
   ];
 
   return (
-    <section id="services-tabs" className="section-padding relative bg-white">
-      {/* Background decorative elements */}
-      <div className="absolute left-0 top-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute right-0 bottom-0 w-80 h-80 bg-orange/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
-      
-      <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
+    <section id="services-tabs" className="section-padding bg-background">
+      <div className="container-custom">
+        <div className="mb-16 max-w-3xl">
           <h2 className="decorated-heading animated-element opacity-0">خدماتنا المتخصصة</h2>
-          <p className="animated-element opacity-0 max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="animated-element opacity-0 max-w-3xl text-lg text-muted-foreground">
             نقدم حلولاً كتابية متكاملة تلبي احتياجات الأفراد والجهات، مع التركيز على الجودة والاحترافية في كل خدمة
           </p>
         </div>
 
         <div className="animated-element opacity-0">
           <Tabs defaultValue="individual" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 bg-gray-100">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 bg-muted">
               <TabsTrigger 
                 value="individual" 
-                className="flex items-center gap-2 data-[state=active]:bg-orange data-[state=active]:text-white"
+                className="flex items-center gap-2 data-[state=active]:bg-orange-dark data-[state=active]:text-white"
               >
                 <User className="w-4 h-4" />
                 خدمات الأفراد
               </TabsTrigger>
               <TabsTrigger 
                 value="entity" 
-                className="flex items-center gap-2 data-[state=active]:bg-orange data-[state=active]:text-white"
+                className="flex items-center gap-2 data-[state=active]:bg-orange-dark data-[state=active]:text-white"
               >
                 <Building2 className="w-4 h-4" />
                 خدمات الجهات
@@ -198,27 +175,11 @@ export default function ServicesTabsSection() {
           </Tabs>
         </div>
 
-        {/* Call to action */}
-        {/* <div className="mt-16 p-8 bg-gray-50 rounded-lg animated-element opacity-0">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">لديك احتياج خاص؟</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              نحن نؤمن بأن كل مشروع كتابي فريد. تواصل معنا لمناقشة احتياجاتك الخاصة وسنقوم بتصميم حل مخصص لك.
-            </p>
-            <Button 
-              onClick={() => window.open('https://forms.gle/q36zENXnA1ouCmcb7', '_blank', 'noopener,noreferrer')}
-              className="bg-gold hover:bg-gold/90 text-white px-8 py-3"
-            >
-              تواصل معنا الآن
-            </Button>
-          </div>
-        </div> */}
-
-<div className="mt-16 p-8 bg-white rounded-lg shadow-md animated-element opacity-0">
+        <div className="mt-16 p-8 bg-card rounded-lg shadow-md animated-element opacity-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">هل تحتاج إلى خدمة مخصصة؟</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">هل تحتاج إلى خدمة مخصصة؟</h3>
+              <p className="text-muted-foreground mb-6">
                 نحن نقدم خدمات مخصصة تناسب تناسب احتياجات الأفراد والجهات . تواصل معنا لمناقشة كيف يمكننا مساعدتك في رحلتك الكتابية.
               </p>
               <a 
@@ -230,9 +191,13 @@ export default function ServicesTabsSection() {
             </div>
             
             <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="مساعدة الكتاب" 
+              <img
+                src="/images/services-support.jpg"
+                alt="مساعدة الكتّاب على تطوير مهاراتهم"
+                width={1260}
+                height={750}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-64 object-cover rounded-lg"
               />
               <div className="absolute inset-0 bg-orange/10 rounded-lg"></div>

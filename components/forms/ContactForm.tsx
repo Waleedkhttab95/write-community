@@ -76,7 +76,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>الاسم</FormLabel>
                 <FormControl>
-                  <Input placeholder="الاسم الكامل" {...field} />
+                  <Input placeholder="الاسم الكامل" autoComplete="name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +90,14 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>البريد الإلكتروني</FormLabel>
                 <FormControl>
-                  <Input placeholder="example@example.com" {...field} />
+                  <Input
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    dir="ltr"
+                    placeholder="example@example.com"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -105,7 +112,14 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>رقم الهاتف</FormLabel>
               <FormControl>
-                <Input placeholder="05xxxxxxxx" {...field} />
+                <Input
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  dir="ltr"
+                  placeholder="05xxxxxxxx"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -132,7 +146,7 @@ export default function ContactForm() {
         
         <Button 
           type="submit" 
-          className="w-full bg-gold hover:bg-gold-dark text-white"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'جارِ الإرسال...' : 'إرسال الرسالة'}

@@ -76,9 +76,9 @@ export default function NewsletterForm({ inFooter = false }: NewsletterFormProps
             name="firstName"
             render={({ field }) => (
               <FormItem>
-                {!inFooter && <FormLabel>الاسم الأول</FormLabel>}
+                <FormLabel className={inFooter ? 'sr-only' : undefined}>الاسم الأول</FormLabel>
                 <FormControl>
-                  <Input placeholder="الاسم الأول" {...field} />
+                  <Input placeholder="الاسم الأول" autoComplete="given-name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,9 +90,9 @@ export default function NewsletterForm({ inFooter = false }: NewsletterFormProps
             name="lastName"
             render={({ field }) => (
               <FormItem>
-                {!inFooter && <FormLabel>الاسم الأخير</FormLabel>}
+                <FormLabel className={inFooter ? 'sr-only' : undefined}>الاسم الأخير</FormLabel>
                 <FormControl>
-                  <Input placeholder="الاسم الأخير" {...field} />
+                  <Input placeholder="الاسم الأخير" autoComplete="family-name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -105,9 +105,16 @@ export default function NewsletterForm({ inFooter = false }: NewsletterFormProps
           name="email"
           render={({ field }) => (
             <FormItem>
-              {!inFooter && <FormLabel>البريد الإلكتروني</FormLabel>}
+              <FormLabel className={inFooter ? 'sr-only' : undefined}>البريد الإلكتروني</FormLabel>
               <FormControl>
-                <Input placeholder="البريد الإلكتروني" {...field} />
+                <Input
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  dir="ltr"
+                  placeholder="البريد الإلكتروني"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,7 +123,7 @@ export default function NewsletterForm({ inFooter = false }: NewsletterFormProps
         
         <Button 
           type="submit" 
-          className={`${inFooter ? 'w-full' : 'px-8'} bg-gold hover:bg-gold-dark text-white`}
+          className={`${inFooter ? 'w-full' : 'px-8'} bg-primary hover:bg-primary/90 text-primary-foreground`}
           disabled={isSubmitting}
         >
           {isSubmitting ? 'جارِ التسجيل...' : 'اشترك الآن'}

@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Monoton&family=Tajawal:wght@200;300;400;500;700;800;900&family=Tilt+Neon&display=swap');
-
+/*
+ * Brando (Arabic) is the only typeface in use and is self-hosted below. The
+ * previous Google Fonts import (Afacad Flux, Monoton, Tajawal, Tilt Neon) was
+ * render-blocking and entirely unused — removed for faster first paint.
+ */
 @font-face {
   font-family: 'Brando';
   src: url('/alfont_com_Brando-Arabic-Text.otf') format('opentype');
@@ -12,46 +15,78 @@
   font-display: swap;
 }
 
+/*
+ * Semantic UI tokens. Values are space-separated HSL channels (H S% L%) so they
+ * compose with Tailwind's `hsl(var(--token))` color definitions. Neutrals are
+ * tinted toward the gold/brown brand hue (~38°) for subconscious cohesion.
+ * Brand colors (gold/red/orange/brown) live in tailwind.config.ts as the single
+ * source of truth — do not duplicate them here.
+ */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 248, 247, 245;
-  
-  /* Brand Colors */
-  --gold: 42, 32, 20;
-  --gold-light: 198, 176, 136;
-  --gold-dark: 142, 112, 56;
-  --red: 135, 31, 34;
-  --red-light: 164, 70, 72;
-  --red-dark: 106, 26, 28;
-  --orange: 221, 118, 25;
-  --orange-light: 229, 147, 77;
-  --orange-dark: 180, 93, 20;
-  --brown: 119, 82, 63;
-  --brown-light: 154, 120, 104;
-  --brown-dark: 95, 66, 50;
+  /* Surfaces — warm off-white, never pure white */
+  --background: 40 33% 98%;
+  --foreground: 30 12% 12%;
+  --card: 40 30% 99%;
+  --card-foreground: 30 12% 12%;
+  --popover: 40 30% 99%;
+  --popover-foreground: 30 12% 12%;
 
-  /* UI Colors */
-  --background: 44, 42, 40;
-  --foreground: 0, 0, 3.9;
-  --card: 0, 0, 100;
-  --card-foreground: 0, 0, 3.9;
-  --popover: 0, 0, 100;
-  --popover-foreground: 0, 0, 3.9;
-  --primary: 31, 29, 26;
-  --primary-foreground: 0, 0, 98;
-  --secondary: 0, 0, 96.1;
-  --secondary-foreground: 0, 0, 9;
-  --muted: 0, 0, 96.1;
-  --muted-foreground: 0, 0, 45.1;
-  --accent: 42, 32, 20;
-  --accent-foreground: 0, 0, 9;
-  --destructive: 0, 84.2, 60.2;
-  --destructive-foreground: 0, 0, 98;
-  --border: 0, 0, 89.8;
-  --input: 0, 0, 89.8;
-  --ring: 42, 32, 20;
+  /* Primary action — gold-dark (#8E7038), passes 4.5:1 with white text */
+  --primary: 39 43% 39%;
+  --primary-foreground: 40 33% 98%;
+
+  /* Secondary / muted — warm light neutrals */
+  --secondary: 38 22% 94%;
+  --secondary-foreground: 30 14% 18%;
+  --muted: 38 22% 94%;
+  --muted-foreground: 30 8% 38%;
+
+  /* Accent — soft gold tint for hover surfaces */
+  --accent: 40 35% 92%;
+  --accent-foreground: 39 43% 30%;
+
+  /* Destructive — brand red (#871F22) */
+  --destructive: 358 63% 33%;
+  --destructive-foreground: 40 33% 98%;
+
+  /* Lines & focus */
+  --border: 38 20% 86%;
+  --input: 38 20% 86%;
+  --ring: 39 43% 39%;
   --radius: 0.5rem;
+}
+
+.dark {
+  /* Surfaces — warm near-black brown, never pure black */
+  --background: 30 12% 9%;
+  --foreground: 40 24% 92%;
+  --card: 30 11% 13%;
+  --card-foreground: 40 24% 92%;
+  --popover: 30 11% 13%;
+  --popover-foreground: 40 24% 92%;
+
+  /* Primary action — gold-light (#C6B088), dark text for contrast */
+  --primary: 38 36% 65%;
+  --primary-foreground: 30 18% 12%;
+
+  /* Secondary / muted — warm dark neutrals */
+  --secondary: 30 9% 19%;
+  --secondary-foreground: 40 24% 92%;
+  --muted: 30 9% 19%;
+  --muted-foreground: 40 10% 64%;
+
+  /* Accent — subtle warm surface lift */
+  --accent: 30 10% 22%;
+  --accent-foreground: 40 24% 92%;
+
+  /* Destructive — lifted brand red for dark bg */
+  --destructive: 358 55% 50%;
+  --destructive-foreground: 40 24% 95%;
+
+  /* Lines & focus */
+  --border: 30 9% 24%;
+  --input: 30 9% 24%;
+  --ring: 38 36% 65%;
 }
 
 @layer base {
@@ -63,7 +98,7 @@
   html {
     @apply scroll-smooth;
     direction: rtl;
-    font-family: 'Brando', sans-serif;
+    font-family: 'Brando', 'Segoe UI', Tahoma, 'Geeza Pro', 'Noto Naskh Arabic', sans-serif;
     width: 100%;
     overflow-x: hidden;
     position: relative;
@@ -77,7 +112,7 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    font-family: 'Brando', sans-serif;
+    font-family: 'Brando', 'Segoe UI', Tahoma, 'Geeza Pro', 'Noto Naskh Arabic', sans-serif;
   }
 
   #__next {
@@ -86,24 +121,32 @@
     position: relative;
   }
 
+  /*
+   * Fluid modular type scale (≈1.25 ratio) on Brando. clamp() lets headings
+   * breathe on larger screens without breakpoint jumps. Component-level size
+   * utilities (text-xl etc.) still override these base sizes where needed.
+   * No letter-spacing on headings — it breaks Arabic letterforms/ligatures.
+   */
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold leading-tight;
+    text-wrap: balance;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    font-size: clamp(2.25rem, 1.45rem + 3.4vw, 3.5rem);
   }
 
   h2 {
-    @apply text-3xl md:text-4xl;
+    font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.5rem);
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
+    font-size: clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
   }
 
   p {
     @apply leading-relaxed;
+    text-wrap: pretty;
   }
 }
 
@@ -130,31 +173,88 @@
   }
   
   .btn-primary {
-    @apply bg-gold text-white px-8 py-3 rounded-md hover:bg-gold-dark transition-colors duration-300 inline-block font-medium;
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-md hover:bg-primary/90 transition-colors duration-300 inline-block font-medium;
   }
-  
+
   .btn-secondary {
-    @apply bg-transparent border-2 border-gold text-gold px-8 py-3 rounded-md hover:bg-gold hover:text-white transition-colors duration-300 inline-block font-medium;
+    @apply bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-md hover:bg-primary hover:text-primary-foreground transition-colors duration-300 inline-block font-medium;
   }
   
   .card {
-    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+    @apply bg-card text-card-foreground p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /*
+   * Reading typography for CMS article bodies (the @tailwindcss/typography
+   * plugin isn't installed). Generous line-height suits Arabic; the measure is
+   * capped for comfortable reading.
+   */
+  .article-content {
+    @apply text-foreground;
+    max-width: 68ch;
+    font-size: 1.125rem;
+    line-height: 1.9;
+  }
+
+  .article-content > * + * {
+    margin-top: 1.25em;
+  }
+
+  .article-content h2 {
+    @apply font-bold text-foreground;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    margin-bottom: 0.4em;
+  }
+
+  .article-content h3 {
+    @apply font-bold text-foreground;
+    font-size: 1.3rem;
+    line-height: 1.35;
+    margin-top: 1.6em;
+    margin-bottom: 0.4em;
+  }
+
+  .article-content a {
+    @apply text-primary underline underline-offset-4 hover:text-primary/80;
+  }
+
+  .article-content strong {
+    @apply font-bold text-foreground;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-inline-start: 1.5em;
+  }
+
+  .article-content ul { list-style: disc; }
+  .article-content ol { list-style: decimal; }
+  .article-content li + li { margin-top: 0.4em; }
+
+  .article-content img {
+    @apply rounded-lg my-8;
+  }
+
+  .article-content blockquote {
+    @apply border-r-4 border-gold/40 pr-4 my-6 text-muted-foreground;
   }
   
   .track-card {
-    @apply card relative overflow-hidden border-t-4 border-gold p-8;
+    @apply card relative overflow-hidden p-8;
   }
-  
+
   .service-card {
-    @apply card flex flex-col items-center text-center p-8;
+    @apply card flex flex-col p-8;
   }
-  
+
   .program-card {
-    @apply card border-r-4 border-orange p-8;
+    @apply card p-8;
   }
   
   .article-card {
-    @apply card hover:scale-105 transition-transform duration-300;
+    @apply bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden;
   }
   
   .animated-element {
@@ -162,73 +262,41 @@
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
-  
-  .animated-element.animate {
+
+  /*
+   * Once the IntersectionObserver adds its reveal class the element must STAY
+   * visible. The compound selector outranks the base `.animated-element` (and any
+   * `opacity-0` utility) so content never reverts to hidden after the keyframe
+   * finishes — guarding against the missing `animation-fill-mode: forwards`.
+   */
+  .animated-element.animate,
+  .animated-element.animate-fade-in-up,
+  .animated-element.animate-fade-in {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  /* Font Classes */
-  .afacad-flux {
-    font-family: "Afacad Flux", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
+/*
+ * Resilience: users who disable JavaScript never trigger the scroll-reveal
+ * observer, which would otherwise leave every section permanently hidden. The
+ * fallback is injected via <noscript> in the root layout.
+ *
+ * Honor reduced-motion: reveal content immediately and neutralize animations.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
-  .monoton-regular {
-    font-family: "Monoton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .tilt-neon {
-    font-family: "Tilt Neon", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "XROT" 0, "YROT" 0;
-  }
-
-  .tajawal-extralight {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-
-  .tajawal-light {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  .tajawal-regular {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .tajawal-medium {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  .tajawal-bold {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  .tajawal-extrabold {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .tajawal-black {
-    font-family: "Tajawal", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

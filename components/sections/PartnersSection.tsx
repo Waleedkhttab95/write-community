@@ -1,26 +1,6 @@
-'use client';
-
-import React, { useEffect } from 'react';
 import Image from 'next/image';
 
 export default function PartnersSection() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    const elements = document.querySelectorAll('.animated-element');
-    elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
 
   const partners = [
     { name: 'هيئة الأدب والنشر والترجمة', image: '/هيئة_الأدب_والنشر_والترجمة.png' },
@@ -36,11 +16,11 @@ export default function PartnersSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="mb-16 max-w-3xl">
           <h2 className="decorated-heading animated-element opacity-0">شركاؤنا</h2>
-          <p className="animated-element opacity-0 max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="animated-element opacity-0 max-w-3xl text-lg text-muted-foreground">
             نفتخر بالتعاون مع مجموعة من المؤسسات الرائدة في مجال النشر والثقافة
           </p>
         </div>
@@ -48,7 +28,7 @@ export default function PartnersSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
           {partners.map((partner, index) => (
             <div key={index} className="text-center animated-element opacity-0">
-              <div className="bg-gray-50 p-6 rounded-lg h-32 flex items-center justify-center">
+              <div className="bg-muted/50 p-6 rounded-lg h-32 flex items-center justify-center">
                 <div className="relative w-full h-24">
                   <Image
                     src={partner.image}

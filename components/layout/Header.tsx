@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { scrollToElement } from '@/lib/utils';
+import ThemeToggle from '@/components/layout/ThemeToggle';
 
 const navItems = [
   { name: 'الرئيسية', href: '#hero' },
@@ -45,7 +46,7 @@ export default function Header() {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
-        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-background/95 backdrop-blur shadow-md py-2' : 'bg-transparent py-4'
       )}
     >
       <div className="container-custom">
@@ -63,12 +64,6 @@ export default function Header() {
                 className="ml-2 w-auto h-12"
                 priority
               />
-              {/* <span className={cn(
-                "text-2xl font-bold transition-colors duration-300",
-                scrolled ? "text-gold" : "text-gold-light"
-              )}>
-                مجتمع الكتابة
-              </span> */}
             </div>
           </Link>
 
@@ -81,23 +76,32 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={cn(
                   "px-4 py-2 mx-1 rounded-md text-sm font-medium transition-colors duration-200",
-                  scrolled ? 
-                    "text-gray-700 hover:text-gold hover:bg-gold-light/10" : 
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                  scrolled ?
+                    "text-foreground/80 hover:text-primary hover:bg-accent" :
                     "text-white hover:text-gold-light hover:bg-white/10"
                 )}
               >
                 {item.name}
               </a>
             ))}
-            <Button 
-              className="bg-gold hover:bg-gold-dark text-white px-6 mr-6" 
+            <ThemeToggle
+              className={cn(
+                "mr-2",
+                scrolled
+                  ? "text-foreground/80 hover:bg-accent"
+                  : "text-white hover:bg-white/10"
+              )}
+            />
+            <Button
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 mr-6" 
               onClick={() => window.open('#contact', '_self')}
             >
               انضم إلينا
             </Button>
 
             <Button 
-              className="bg-gold hover:bg-gold-dark text-white px-6 mr-3" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 mr-3" 
               onClick={() => window.open('https://store-write-community.com', '_blank')}
             >
               المتجر
@@ -106,20 +110,31 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center gap-1">
+            <ThemeToggle
+              className={cn(
+                scrolled || isMenuOpen
+                  ? "text-foreground hover:bg-accent"
+                  : "text-white hover:bg-white/10"
+              )}
+            />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
               className={cn(
-                "p-2 rounded-md transition-colors",
-                scrolled ? 
-                  "text-gray-700 hover:bg-gray-100" : 
+                "inline-flex h-11 w-11 items-center justify-center rounded-md transition-colors",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                scrolled || isMenuOpen ?
+                  "text-foreground hover:bg-accent" :
                   "text-white hover:bg-white/10"
               )}
             >
               {isMenuOpen ? (
-                <X size={24} />
+                <X size={24} aria-hidden="true" />
               ) : (
-                <Menu size={24} />
+                <Menu size={24} aria-hidden="true" />
               )}
             </button>
           </div>
@@ -128,7 +143,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-40 pt-16 w-full">
+        <div id="mobile-menu" className="lg:hidden fixed inset-0 bg-background z-40 pt-16 w-full">
           <nav className="container-custom py-5">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
@@ -136,13 +151,13 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="px-4 py-3 rounded-md text-gray-700 hover:bg-gold-light/10 hover:text-gold font-medium"
+                  className="px-4 py-3 rounded-md text-foreground hover:bg-accent hover:text-primary font-medium"
                 >
                   {item.name}
                 </a>
               ))}
               <Button 
-                className="bg-gold hover:bg-gold-dark text-white mt-4 w-full" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4 w-full" 
                 onClick={() => {
                   setIsMenuOpen(false);
                   scrollToElement('contact');
@@ -152,7 +167,7 @@ export default function Header() {
               </Button>
 
               <Button 
-                className="bg-gold hover:bg-gold-dark text-white mt-2 w-full" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground mt-2 w-full" 
                 onClick={() => {
                   setIsMenuOpen(false);
                   window.open('https://store-write-community.com', '_blank');

@@ -21,7 +21,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
     return (
       <div className="container-custom py-20 text-center">
         <h1 className="text-2xl font-bold mb-4">المقال غير موجود</h1>
-        <Link href="/#articles" className="text-gold hover:text-gold-dark inline-flex items-center">
+        <Link href="/#articles" className="text-primary hover:text-primary/80 inline-flex items-center">
           <ChevronLeft className="ml-1" size={20} />
           العودة إلى المقالات
         </Link>
@@ -30,46 +30,49 @@ export default async function ArticlePage({ params }: { params: { slug: string }
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-muted/30 min-h-screen">
       <div className="container-custom pt-24 pb-8">
         <nav className="mb-8">
-          <ol className="flex flex-wrap items-center gap-1.5 break-words text-sm text-gray-500">
+          <ol className="flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground">
             <li className="inline-flex items-center gap-1.5">
-              <Link href="/" className="hover:text-gold transition-colors">
+              <Link href="/" className="hover:text-primary transition-colors">
                 الرئيسية
               </Link>
             </li>
             <li className="inline-flex items-center gap-1.5">
               <span className="mx-1">/</span>
-              <Link href="/#articles" className="hover:text-gold transition-colors">
+              <Link href="/#articles" className="hover:text-primary transition-colors">
                 المقالات
               </Link>
             </li>
             <li className="inline-flex items-center gap-1.5">
               <span className="mx-1">/</span>
-              <span className="font-medium text-gray-900">{article.title}</span>
+              <span className="font-medium text-foreground">{article.title}</span>
             </li>
           </ol>
         </nav>
 
-        <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-[400px]">
+        <article className="bg-card rounded-lg shadow-lg overflow-hidden">
+          <div className="relative h-56 sm:h-80 md:h-[400px]">
             <img
               src={article.image}
               alt={article.title}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover"
             />
             {article.category && (
-              <div className="absolute top-4 right-4 bg-gold text-white text-sm px-4 py-2 rounded-full">
+              <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-sm px-4 py-2 rounded-full">
                 {article.category}
               </div>
             )}
           </div>
 
           <div className="p-8">
-            <h1 className="text-3xl font-bold mb-6 text-gray-800">{article.title}</h1>
+            <h1 className="text-3xl font-bold mb-6 text-foreground">{article.title}</h1>
 
-            <div className="flex items-center gap-6 text-gray-600 mb-8">
+            <div className="flex items-center gap-6 text-muted-foreground mb-8">
               <div className="flex items-center">
                 <User size={18} className="ml-2" />
                 <span>{article.author}</span>
@@ -82,7 +85,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 
             {/* Content is sanitized HTML produced by the CMS editor. */}
             <div
-              className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+              className="article-content"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </div>
@@ -91,7 +94,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         <div className="mt-8 text-center">
           <Link
             href="/#articles"
-            className="inline-flex items-center text-gold hover:text-gold-dark transition-colors"
+            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
           >
             <ChevronLeft className="ml-2" size={20} />
             العودة إلى المقالات

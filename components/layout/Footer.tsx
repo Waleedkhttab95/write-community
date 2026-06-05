@@ -19,11 +19,12 @@ export default function Footer() {
               بيئة حاضنة لتطوير المهارات الكتابية من خلال برامج وورش عمل وملتقيات متخصصة.
             </p>
             <div className="flex space-x-4 space-x-reverse mt-6">
-              <a 
-                href="https://x.com/WritingKSA" 
-                target="_blank" 
+              <a
+                href="https://x.com/WritingKSA"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
+                aria-label="منصة إكس (تويتر)"
+                className="inline-flex h-11 w-11 items-center justify-center bg-gold/20 rounded-full hover:bg-gold/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -31,31 +32,35 @@ export default function Footer() {
                   height={20}
                   className="text-gold-light"
                   fill="currentColor"
+                  aria-hidden="true"
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/Writing_community22" 
-                target="_blank" 
+                href="https://www.instagram.com/Writing_community22"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
+                aria-label="إنستغرام"
+                className="inline-flex h-11 w-11 items-center justify-center bg-gold/20 rounded-full hover:bg-gold/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Instagram size={20} className="text-gold-light" />
               </a>
               <a 
-                href="https://t.me/writing_community" 
-                target="_blank" 
+                href="https://t.me/writing_community"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
+                aria-label="تيليجرام"
+                className="inline-flex h-11 w-11 items-center justify-center bg-gold/20 rounded-full hover:bg-gold/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Send size={20} className="text-gold-light" />
               </a>
               <a 
-                href="https://www.linkedin.com/company/writingcommunity/" 
-                target="_blank" 
+                href="https://www.linkedin.com/company/writingcommunity/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold/20 p-2 rounded-full hover:bg-gold/40 transition-colors"
+                aria-label="لينكدإن"
+                className="inline-flex h-11 w-11 items-center justify-center bg-gold/20 rounded-full hover:bg-gold/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Linkedin size={20} className="text-gold-light" />
               </a>
