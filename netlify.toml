@@ -1,0 +1,10 @@
+[build]
+  command = "next build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Articles are fetched from the CMS at build time. Set CMS_API_URL in the
+# Netlify UI (Site settings → Environment variables) to the deployed CMS URL.
+# If unset, the code defaults to https://cultural-managment.com
